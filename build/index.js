@@ -1,12 +1,21 @@
 (function() {
   'use strict';
-  console.log('angular', angular);
+  var e, error, module;
 
-  angular.module('ndx-socket', []).factory('socket', function($http) {
+  module = null;
+
+  try {
+    module = angular.module('ndx');
+  } catch (error) {
+    e = error;
+    module = angular.module('ndx-socket', []);
+  }
+
+  module.factory('socket', function($http) {
     var socket;
     socket = io();
     return {
-      socket: socket
+      on: socket.on
     };
   });
 

@@ -1,6 +1,9 @@
 'use strict'
-console.log 'angular', angular
-angular.module 'ndx-socket', []
-.factory 'socket', ($http) ->
+module = null
+try
+  module = angular.module 'ndx'
+catch e
+  module =angular.module 'ndx-socket', []
+module.factory 'socket', ($http) ->
   socket = io()
-  socket: socket
+  on: socket.on

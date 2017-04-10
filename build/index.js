@@ -8,7 +8,7 @@
     module = angular.module('ndx');
   } catch (error) {
     e = error;
-    module = angular.module('ndx-socket', []);
+    module = angular.module('ndx', []);
   }
 
   module.factory('socket', function($http) {

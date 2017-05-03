@@ -6,4 +6,4 @@ catch e
   module =angular.module 'ndx', []
 module.factory 'socket', ($http) ->
   socket = io()
-  on: socket.on
+  socket

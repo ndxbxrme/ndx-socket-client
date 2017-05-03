@@ -14,9 +14,7 @@
   module.factory('socket', function($http) {
     var socket;
     socket = io();
-    return {
-      on: socket.on
-    };
+    return socket;
   });
 
 }).call(this);
